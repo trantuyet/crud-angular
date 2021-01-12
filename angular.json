@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "VT-C0920G1-Angular"
+    }
+  },
+  "defaultProject": "VT-C0920G1-Angular",
+  "cli": {
+    "analytics": "36464f09-4a70-45c4-88f8-a16e1e1b98a5"
+  }
 }

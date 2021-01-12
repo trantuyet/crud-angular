@@ -1,0 +1,40 @@
+<div class="card mt-3">
+  <div class="card-header">
+    {{ page_title }}
+    <button class="btn btn-success" (click)="click()">Show/hide</button>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Địa chỉ</th>
+        <th [style.display]="isShowImage" scope="col">Ảnh đại điện</th>
+        <th scope="col">Loại người dùng</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <th scope="row">{{ i + 1}}</th>
+        <td>{{ user.name}}</td>
+        <td>{{ user.address}}</td>
+        <td [style.display]="isShowImage"  ><img [src]="user.avatar" width="100" alt=""></td>
+        <td *ngIf="user.role == 1; else notAdmin">
+          Admin
+        </td>
+        <ng-template #notAdmin>
+          <td>
+            User
+          </td>
+        </ng-template>
+        <td>
+          <button class="btn btn-danger" (click)="delete(user.id)">Delete</button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
